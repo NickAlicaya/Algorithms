@@ -1,10 +1,14 @@
 #!/usr/bin/python
 
 import argparse
-
 def find_max_profit(prices):
-  pass
-
+  highest_value=max(prices[1:])
+  tip=prices.index(highest_value)
+  lowest_range=prices[:tip]
+  lowest_value=min(lowest_range)
+  profit=highest_value-lowest_value
+  return profit
+ 
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
@@ -13,3 +17,8 @@ if __name__ == '__main__':
   args = parser.parse_args()
 
   print("A profit of ${profit} can be made from the stock prices {prices}.".format(profit=find_max_profit(args.integers), prices=args.integers))
+
+  # find highest value in list
+  # find the lowest value before or left of list
+  # substract lowest value from highest value
+
