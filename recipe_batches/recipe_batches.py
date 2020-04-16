@@ -6,15 +6,14 @@ def recipe_batches(recipe, ingredients):
   if recipe.keys() == ingredients.keys():
     counter = 0
     arr = []
-    for key in ingredients:
+    for key in recipe:
       if ingredients[key] >= recipe[key]:
         batch = ingredients[key] // recipe[key]
         arr.append(batch)
         counter = min(arr)
-        return counter
-        print ("You have enough ingredients for",{counter},"batch(es).")
-    else:
-      print("Not enough ingredients.")
+      else:
+        print("Not enough ingredients.")  
+    return counter    
   return 0
 
 
